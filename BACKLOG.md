@@ -43,6 +43,7 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 | ID | Prio | Status | Description |
 |----|------|--------|-------------|
 | D-001 | Hög | | Automatic publishing: connect GitHub repo to Cloudflare Workers Builds (one-time action by the user), deploy on push to main. Include D1 migrations in the build. |
+| D-002 | Hög | | Design proposal: 2–3 visual directions (public site + admin, desktop + mobile, light + dark) shown as a private page. The chosen directions become the themes in F-007. Waiting for the owner's answers on style, colours, fonts, layout and site name. |
 | F-001 | Hög | | Base site: Cloudflare Worker + D1, public site on a subdomain of trythis.one. Include WEB.md basics. |
 | F-002 | Hög | | Admin login via Cloudflare Access on `/admin` (no own password handling). |
 | F-003 | Hög | | Posts: create/edit/delete, statuses draft, published, scheduled (publish time). Autosave of drafts. |
