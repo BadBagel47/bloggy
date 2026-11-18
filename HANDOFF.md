@@ -39,6 +39,8 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 - 2026-11-18: No personal name or photo of the owner on the site.
 - 2026-11-18: Design direction: two themes, "Clean" (stylish, modern typography) and "Magazine". Light mode with discreet coffee-brown tones; dark mode leaning brown; text with a very faint yellow-brown tint. Each theme has two typography options: modern (sans) and classic (serif).
 
+- 2026-11-18: Home page: up to 5 featured posts in a manual slider (never auto-advancing), the first one most prominent (F-021). Posts show title + intro text; the author decides the intro with a "Read more" break in the editor (F-022). Animate where it fits (F-023).
+
 ## One-time actions
 
 - Set the repo's default branch to main (GitHub settings) – pending. The work branch became default because it was pushed first to the empty repo.

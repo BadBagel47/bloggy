@@ -15,12 +15,15 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
   - F-003 – Inlägg med utkast, publicerat och schemalagt, med automatisk sparning
   - F-004 – Editor med formatering, listor, justering, citat och kodblock
   - F-008 – Förhandsvisning innan publicering
+  - F-022 – Du väljer själv i editorn var "Läs mer" ska klippa texten på startsidan
   - Fråga: Språk i adminsidan? Rekommendation: svenska.
 - **C** – standard model, medium level – Sajtens visning: teman, arkiv, taggar och sidor – bygger på B
   - F-007 – Två–tre teman att välja mellan i admin, med mörkt läge
   - F-006 – Arkiv per månad och år enligt beskrivningen
   - F-005 – Egna taggar och taggsidor
   - F-009 – Fasta sidor, t.ex. "Om mig"
+  - F-021 – Upp till fem framlyfta inlägg överst, som man bläddrar mellan i sidled
+  - F-023 – Diskreta animationer på sajten
 - **D** – standard model, medium level – Delning och säkerhetskopia – bygger på B
   - F-010 – Snygga länkar och delningsinfo för sociala medier
   - F-011 – Exportera allt innehåll med en knapp
@@ -28,7 +31,6 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
   - F-015 – RSS-flöde
   - F-016 – Sök
   - F-017 – Lästid per inlägg
-  - F-018 – Fästa inlägg överst
   - F-019 – Besöksstatistik utan kakor
 - **F** – strong model, high level – Bilder via länk och bildram – bygger på B – väntar på svar
   - F-012 – Stor bild i text
@@ -59,11 +61,15 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 | F-015 | Låg | | RSS feed. |
 | F-016 | Låg | | Search. |
 | F-017 | Låg | | Reading time per post. |
-| F-018 | Låg | | Pin posts to the top. |
 | F-019 | Låg | | Cookie-free visitor statistics (Cloudflare Web Analytics). No cookie banner needed. |
+| F-021 | Medel | | Featured posts: up to 5 posts marked "Featured" in the editor are shown at the top of the home page as a large slider. Manual only: arrows, dots and swipe; never auto-advances. The first featured post is the most prominent element on the page. Replaces F-018. |
+| F-022 | Hög | | Read-more break: the author places a "Read more" break in the editor. Text above it is the intro shown with the title on the home page; the rest needs a click on "Read more". |
+| F-023 | Medel | | Subtle animations where they fit: content rises in on load, slider slides, archive months fold out, underline and arrow on hover, toggles. Respect "reduce motion". |
 | F-014 | Låg | Parkerad | Image upload to Cloudflare R2. Waiting: owner does not want to use account storage for media yet. |
 | F-020 | Låg | Parkerad | Comments. Advised against for now: spam protection, moderation and GDPR. |
 
 ## Done
 
-None yet.
+| ID | Description |
+|----|-------------|
+| F-018  Pin posts to the top. Replaced by F-021 (featured posts), 2026-11-18. |
