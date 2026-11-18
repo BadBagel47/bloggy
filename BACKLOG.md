@@ -72,4 +72,4 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 
 | ID | Description |
 |----|-------------|
-| F-018  Pin posts to the top. Replaced by F-021 (featured posts), 2026-11-18. |
+| F-018 | Pin posts to the top. Replaced by F-021 (featured posts), 2026-11-18. |
