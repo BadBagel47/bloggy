@@ -2,7 +2,7 @@
 
 Rules version: 1.14
 Inventory: 2026-11-18 – repo was empty (no commits, branches, issues or pull requests).
-Project language: not decided yet (see Q5 in BACKLOG.md). Code, comments and commits in English.
+Project language: English (site text, decided 2026-11-18). Code, comments and commits in English.
 
 ## Goal
 
@@ -34,6 +34,10 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 - 2026-11-18: Editor shows formatting directly (WYSIWYG) with markdown-style shortcuts: bold/italic, headings, bullet and numbered lists, alignment (left/centre/right), quotes, code blocks (Q7).
 - 2026-11-18: No image storage for now; image upload waits.
 - 2026-11-18: Archive spec, see F-006.
+- 2026-11-18: Site text in English ("Vi provar engelska").
+- 2026-11-18: Site name: "Try this one blog".
+- 2026-11-18: No personal name or photo of the owner on the site.
+- 2026-11-18: Design direction: two themes, "Clean" (stylish, modern typography) and "Magazine". Light mode with discreet coffee-brown tones; dark mode leaning brown; text with a very faint yellow-brown tint. Each theme has two typography options: modern (sans) and classic (serif).
 
 ## One-time actions
 
@@ -48,4 +52,5 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 
 ## Latest
 
+- 2026-11-18: Design proposal D-002 published as a private page: https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h – waiting for feedback.
 - 2026-11-18: Brainstorm done, rules set up, backlog and first run proposal written.

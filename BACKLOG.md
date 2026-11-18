@@ -10,8 +10,7 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
   - D-001 – Koppla repot till Cloudflare så att varje ändring publiceras automatiskt
   - F-001 – Grundsajt på Cloudflare med databas, på en subdomän till trythis.one
   - F-002 – Adminsidan skyddas av Cloudflares inloggning
-  - Fråga: Vilken subdomän? Rekommendation: blog.trythis.one.
-  - Fråga: Språk på sajten för besökare (menyer, datum, "Läs mer")? Ingen rekommendation, beror på vilka som ska läsa.
+  - Fråga: Vilken subdomän? Rekommendation: blog.trythis.one. (Ägaren avvaktar.)
 - **B** – strong model, high level – Skriva och publicera inlägg – bygger på A
   - F-003 – Inlägg med utkast, publicerat och schemalagt, med automatisk sparning
   - F-004 – Editor med formatering, listor, justering, citat och kodblock
@@ -43,7 +42,7 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 | ID | Prio | Status | Description |
 |----|------|--------|-------------|
 | D-001 | Hög | | Automatic publishing: connect GitHub repo to Cloudflare Workers Builds (one-time action by the user), deploy on push to main. Include D1 migrations in the build. |
-| D-002 | Hög | | Design proposal: 2–3 visual directions (public site + admin, desktop + mobile, light + dark) shown as a private page. The chosen directions become the themes in F-007. Waiting for the owner's answers on style, colours, fonts, layout and site name. |
+| D-002 | Hög | | Design proposal: two themes (Clean, Magazine) × two typographies, light + dark, public site + admin. First version published as a private page (https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h). Waiting for the owner's feedback; the chosen result becomes the themes in F-007. |
 | F-001 | Hög | | Base site: Cloudflare Worker + D1, public site on a subdomain of trythis.one. Include WEB.md basics. |
 | F-002 | Hög | | Admin login via Cloudflare Access on `/admin` (no own password handling). |
 | F-003 | Hög | | Posts: create/edit/delete, statuses draft, published, scheduled (publish time). Autosave of drafts. |
