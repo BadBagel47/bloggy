@@ -37,6 +37,7 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 
 ## One-time actions
 
+- Set the repo's default branch to main (GitHub settings) – pending. The work branch became default because it was pushed first to the empty repo.
 - D-001 Connect the GitHub repo to Cloudflare (Workers Builds) – pending, needed in run group A.
 - Cloudflare Access for the admin – pending, part of F-002.
 
