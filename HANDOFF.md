@@ -41,6 +41,8 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 
 - 2026-11-18: Home page: up to 5 featured posts in a manual slider (never auto-advancing), the first one most prominent (F-021). Posts show title + intro text; the author decides the intro with a "Read more" break in the editor (F-022). Animate where it fits (F-023).
 
+- 2026-11-19: Featured posts are not repeated in the "Latest" list below the slider (Q12).
+
 ## One-time actions
 
 - Set the repo's default branch to main (GitHub settings) – pending. The work branch became default because it was pushed first to the empty repo.
