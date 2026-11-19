@@ -58,5 +58,6 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 
 ## Latest
 
+- 2026-11-19: Design proposal D-002 approved by the owner ("Ser bra ut"). Next: run proposal, waiting for go-ahead.
 - 2026-11-18: Design proposal D-002 published as a private page: https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h – waiting for feedback.
 - 2026-11-18: Brainstorm done, rules set up, backlog and first run proposal written.

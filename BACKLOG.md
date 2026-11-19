@@ -44,7 +44,6 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 | ID | Prio | Status | Description |
 |----|------|--------|-------------|
 | D-001 | Hög | | Automatic publishing: connect GitHub repo to Cloudflare Workers Builds (one-time action by the user), deploy on push to main. Include D1 migrations in the build. |
-| D-002 | Hög | | Design proposal: two themes (Clean, Magazine) × two typographies, light + dark, public site + admin. First version published as a private page (https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h). Waiting for the owner's feedback; the chosen result becomes the themes in F-007. |
 | F-001 | Hög | | Base site: Cloudflare Worker + D1, public site on a subdomain of trythis.one. Include WEB.md basics. |
 | F-002 | Hög | | Admin login via Cloudflare Access on `/admin` (no own password handling). |
 | F-003 | Hög | | Posts: create/edit/delete, statuses draft, published, scheduled (publish time). Autosave of drafts. |
@@ -72,4 +71,5 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 
 | ID | Description |
 |----|-------------|
+| D-002 | Design proposal approved 2026-11-19: https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h (Clean and Magazine themes, admin views incl. theme picker). The build follows it. |
 | F-018 | Pin posts to the top. Replaced by F-021 (featured posts), 2026-11-18. |
