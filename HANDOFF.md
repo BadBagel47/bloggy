@@ -10,20 +10,22 @@ Bloggy: a slim personal CMS/blog running entirely on Cloudflare, public from the
 
 ## Current state
 
-Planning only. Nothing is built. The plan and proposed runs are in [BACKLOG.md](BACKLOG.md).
+Run groups A–D are built and tested locally (unit tests, end-to-end smoke test, browser checks of both themes, admin, editor, phone width and dark mode). **Not published yet**: the site goes live when the owner connects the repo to Cloudflare (one-time actions below). Code overview: [README.md](README.md).
 
-## Planned architecture (not built)
+## Architecture
 
-- Cloudflare Worker serves both the public site and the admin (`/admin`).
-- Cloudflare D1 (SQLite) stores posts, pages, tags and settings.
-- Cloudflare Access protects `/admin` (login handled by Cloudflare, no passwords stored by us).
-- Scheduled posts: a post is visible when status is published and its publish time has passed (no cron needed).
-- Images: none stored for now. Later R2 (F-014, parked).
-- WEB.md basics are included from the start.
+- Cloudflare Worker (`src/index.js`) serves the public site and the admin (`/admin`). Static files from `public/` via the assets binding.
+- Cloudflare D1 binding `DB` (database `bloggy-db`, created by automatic provisioning on the first deploy). The Worker creates its tables itself (`ensureSchema` in `src/db.js`), so deploys need no migration step and the build token needs no D1 migration rights.
+- Admin protection: Cloudflare Access self-hosted application on the `/admin` path, plus the Worker verifies the Access JWT (`src/auth.js`). Without `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` the admin is locked for everyone (fail closed). `keep_vars: true` keeps these dashboard variables on deploy.
+- Scheduled posts: visible when `status = 'published'` and `publish_at <= now`; no cron needed.
+- Post HTML is cleaned with HTMLRewriter (allowlist) before it is stored. CSP and other security headers on all pages; admin writes require same origin.
+- Fonts are self-hosted (`public/fonts`, SIL OFL licences in `LICENSE.txt`) – no visitor requests to Google.
+- Editor: TipTap, bundled to `public/admin/editor.js` (committed). Run `npm run build` after editing `admin-src/editor.js`; `npm run check` fails if the bundle is stale.
+- Images: none stored yet (F-012–F-014).
 
 ## Publishing method
 
-Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys automatically on every push to main (D-001). This is a one-time action for the user in the Cloudflare dashboard.
+Cloudflare Git integration (Workers Builds): every push to `main` deploys the Worker with the default command `npx wrangler deploy`. Not connected yet – see one-time actions. Site address after connecting: `https://bloggy.<account-subdomain>.workers.dev` (later a trythis.one subdomain, Q8).
 
 ## Decisions
 
@@ -51,17 +53,23 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 
 ## One-time actions
 
-- Set the repo's default branch to main (GitHub settings) – pending. The work branch became default because it was pushed first to the empty repo.
-- D-001 Connect the GitHub repo to Cloudflare (Workers Builds) – pending, needed in run group A.
-- Cloudflare Access for the admin – pending, part of F-002.
+1. **Default branch to main** (GitHub → Settings → Default branch) – pending. The work branch became default because it was pushed first to the empty repo.
+2. **D-001 Connect the repo to Cloudflare** – pending. Cloudflare dashboard → Workers & Pages → Create application → Import a repository (GitHub) → `BadBagel47/bloggy` → project name `bloggy` (must match `name` in `wrangler.jsonc`), branch `main`, no build command, default deploy command → Save and Deploy.
+   - If the first build fails on creating the database: create a D1 database named `bloggy-db` in the dashboard (Storage & Databases → D1) and give its database ID (not secret) to the agent, who adds it to `wrangler.jsonc`.
+3. **F-002 Admin login with Cloudflare Access** – pending, after step 2.
+   - Zero Trust (free plan) → Access → Applications → Add an application → Self-hosted. Domain: the Worker's workers.dev hostname, path `admin`. Policy: Allow, include Emails = the owner's email. Save.
+   - Copy the application's "Application Audience (AUD) Tag", and the team domain (`https://<team>.cloudflareaccess.com`, Zero Trust → Settings).
+   - Workers & Pages → bloggy → Settings → Variables and Secrets: add text variables `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` → Deploy.
+   - Check: `/admin` asks for a Cloudflare login and then shows "Inlägg". If deeper admin pages say "Adminsidan är låst", add a second path `admin/*` to the Access application.
 
-## Environment notes (2026-11-18)
+## Environment notes
 
-- Cloud session; can push to `claude/` branches. Running third-party installers via npx was blocked by the session's safety check.
-- No Cloudflare access from the session: deploys go through the Git integration.
+- 2026-11-18: Cloud session; can push to `claude/` branches and to `main`. Running third-party installers via npx was blocked by the session's safety check (npm install of the project's own dependencies works).
+- 2026-11-19: No Cloudflare account access from the session: deploys go through the Git integration. developers.cloudflare.com is blocked by the session network; Cloudflare docs were read from the cloudflare-docs GitHub repo instead.
+- 2026-11-19: Local testing works: `npx wrangler dev` (with `.dev.vars` `DEV_ADMIN_BYPASS=1`), Playwright/Chromium for browser checks.
 
 ## Latest
 
+- 2026-11-19: Run groups A–D built and tested locally (D-001 config, F-001–F-011, F-021–F-023). Waiting for the owner's one-time Cloudflare steps before publishing. Remaining: groups E (RSS, search, reading time, statistics) and F (images, waiting for Q10/Q11).
 - 2026-11-19: Design proposal D-002 approved by the owner ("Ser bra ut"). Next: run proposal, waiting for go-ahead.
 - 2026-11-18: Design proposal D-002 published as a private page: https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h – waiting for feedback.
-- 2026-11-18: Brainstorm done, rules set up, backlog and first run proposal written.

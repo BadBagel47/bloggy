@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bloggy",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  // Static files (CSS, fonts, scripts, the admin editor bundle).
+  "assets": { "directory": "./public" },
+  // The database is created automatically on the first deploy (automatic provisioning).
+  // The Worker creates its own tables on first use, so no migration step is needed.
+  "d1_databases": [{ "binding": "DB", "database_name": "bloggy-db" }],
+  // ACCESS_TEAM_DOMAIN and ACCESS_AUD are set in the Cloudflare dashboard (see HANDOFF.md).
+  // keep_vars stops deploys from removing them.
+  "keep_vars": true,
+  "observability": { "enabled": true }
+}

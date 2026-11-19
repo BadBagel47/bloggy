@@ -1,0 +1,23 @@
+{
+  "name": "bloggy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A slim personal CMS and blog running on Cloudflare Workers and D1.",
+  "scripts": {
+    "build": "node scripts/build-admin.mjs",
+    "dev": "wrangler dev",
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/check-bundle.mjs && npm test",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@tiptap/core": "^3.34.0",
+    "@tiptap/extension-text-align": "^3.34.0",
+    "@tiptap/extensions": "^3.34.0",
+    "@tiptap/pm": "^3.34.0",
+    "@tiptap/starter-kit": "^3.34.0",
+    "esbuild": "^0.28.2",
+    "wrangler": "^4.165.0"
+  }
+}
