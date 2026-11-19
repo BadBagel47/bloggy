@@ -45,6 +45,10 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 - 2026-11-19: Both themes (Clean and Magazine) are kept exactly as designed, including the owner's own size adjustments in the Clean home list (headings 35 px, intro 16 px). The owner switches between them in admin under Theme (design: Admin · Theme). Magazine keeps its two typographies (classic/modern), chosen in the same view.
 - 2026-11-19: Featured posts are not repeated in the "Latest" list below the slider (Q12).
 
+- 2026-11-19: Start on Cloudflare's free workers.dev address; move to a trythis.one subdomain later (Q8).
+- 2026-11-19: Admin UI in Swedish (Q9). Public site text in English.
+- 2026-11-19: Go-ahead for run groups A–D (D-001, F-001–F-011, F-021–F-023).
+
 ## One-time actions
 
 - Set the repo's default branch to main (GitHub settings) – pending. The work branch became default because it was pushed first to the empty repo.
