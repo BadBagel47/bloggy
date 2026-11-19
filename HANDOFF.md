@@ -42,6 +42,7 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 - 2026-11-18: Home page: up to 5 featured posts in a manual slider (never auto-advancing), the first one most prominent (F-021). Posts show title + intro text; the author decides the intro with a "Read more" break in the editor (F-022). Animate where it fits (F-023).
 
 - 2026-11-19: Clean theme typography chosen: headings Montserrat Alternates weight 400, body DM Sans, larger body text (about 19–20 px). Second typography option for the Clean theme not chosen yet.
+- 2026-11-19: Both themes (Clean and Magazine) are kept exactly as designed, including the owner's own size adjustments in the Clean home list (headings 35 px, intro 16 px). The owner switches between them in admin under Theme (design: Admin · Theme). Magazine keeps its two typographies (classic/modern), chosen in the same view.
 - 2026-11-19: Featured posts are not repeated in the "Latest" list below the slider (Q12).
 
 ## One-time actions

@@ -51,7 +51,7 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 | F-004 | Hög | | Editor (WYSIWYG + markdown shortcuts): bold, italic, headings, bullet/numbered lists, align left/centre/right, quotes, code blocks. |
 | F-005 | Medel | | Custom tags: create freely on posts; tag pages listing all posts with a tag. |
 | F-006 | Medel | | Archive: posts grouped per month with count, e.g. "January (5)", grouped per year. Hide empty months. Older years collapsed. The latest year that has posts is expanded by default (e.g. 2027 without posts → 2026 is expanded). |
-| F-007 | Medel | | Themes: 2–3 simple but good-looking themes; the owner picks one in admin. Dark mode follows the visitor's setting. Fonts are self-hosted (not loaded from Google's servers) to avoid sending visitors' IP addresses to Google (GDPR). |
+| F-007 | Medel | | Themes: Clean and Magazine, built exactly as in the design proposal (D-002); the owner picks one in admin under Theme, plus Magazine's typography (classic/modern). Dark mode follows the visitor's setting. Fonts are self-hosted (not loaded from Google's servers) to avoid sending visitors' IP addresses to Google (GDPR). |
 | F-008 | Medel | | Preview a post exactly as visitors will see it before publishing. |
 | F-009 | Medel | | Static pages (e.g. "About me") alongside posts. |
 | F-010 | Medel | | Clean URLs (slugs) and share info (title, description, image) for social media. |
