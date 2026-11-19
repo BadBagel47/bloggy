@@ -62,7 +62,7 @@ Prioriterat för: kunna skriva och publicera så snabbt som möjligt.
 | F-016 | Låg | | Search. |
 | F-017 | Låg | | Reading time per post. |
 | F-019 | Låg | | Cookie-free visitor statistics (Cloudflare Web Analytics). No cookie banner needed. |
-| F-021 | Medel | | Featured posts: up to 5 posts marked "Featured" in the editor are shown at the top of the home page as a large slider. Manual only: arrows, dots and swipe; never auto-advances. The first featured post is the most prominent element on the page. Featured posts are not repeated in the "Latest" list. Replaces F-018. |
+| F-021 | Medel | | Featured posts: up to 5 posts marked "Featured" in the editor are shown at the top of the home page as a large slider. Manual only: arrows, dots and swipe; never auto-advances. In the Magazine theme the slides have a clear gap between them while sliding. The first featured post is the most prominent element on the page. Featured posts are not repeated in the "Latest" list. Replaces F-018. |
 | F-022 | Hög | | Read-more break: the author places a "Read more" break in the editor. Text above it is the intro shown with the title on the home page; the rest needs a click on "Read more". |
 | F-023 | Medel | | Subtle animations where they fit: content rises in on load, slider slides, archive months fold out, underline and arrow on hover, toggles. Respect "reduce motion". |
 | F-014 | Låg | Parkerad | Image upload to Cloudflare R2. Waiting: owner does not want to use account storage for media yet. |
