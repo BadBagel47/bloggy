@@ -41,7 +41,7 @@ Not set up yet. Planned: Cloudflare's Git integration (Workers Builds) deploys a
 
 - 2026-11-18: Home page: up to 5 featured posts in a manual slider (never auto-advancing), the first one most prominent (F-021). Posts show title + intro text; the author decides the intro with a "Read more" break in the editor (F-022). Animate where it fits (F-023).
 
-- 2026-11-19: Clean theme typography: owner found Inter too basic. Proposal now offers five pairings to choose two from: Instrument Serif + Instrument Sans, Space Grotesk + DM Sans, Syne + Manrope, Cormorant Garamond + Lora, Newsreader. Owner prefers Space Grotesk + DM Sans; tried with thin headings and larger body text; 2026-11-19 now trying Momo Trust Display (only one weight) for headings with DM Sans body (pending approval).
+- 2026-11-19: Clean theme typography chosen: headings Montserrat Alternates weight 400, body DM Sans, larger body text (about 19–20 px). Second typography option for the Clean theme not chosen yet.
 - 2026-11-19: Featured posts are not repeated in the "Latest" list below the slider (Q12).
 
 ## One-time actions
