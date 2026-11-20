@@ -10,7 +10,7 @@ Bloggy: a slim personal CMS/blog running entirely on Cloudflare, public from the
 
 ## Current state
 
-Run groups A–D are built and tested locally (unit tests, end-to-end smoke test, browser checks of both themes, admin, editor, phone width and dark mode). **Not published yet**: the site goes live when the owner connects the repo to Cloudflare (one-time actions below). Code overview: [README.md](README.md).
+Run groups A–D are built and tested locally (unit tests, end-to-end smoke test, browser checks of both themes, admin, editor, phone width and dark mode). Published 2026-11-20 at https://bloggy.l8p1.workers.dev and verified (pages, assets, self-hosted fonts load; admin correctly locked until Access is set up). Code overview: [README.md](README.md).
 
 ## Architecture
 
@@ -25,7 +25,7 @@ Run groups A–D are built and tested locally (unit tests, end-to-end smoke test
 
 ## Publishing method
 
-Cloudflare Git integration (Workers Builds): every push to `main` deploys the Worker with the default command `npx wrangler deploy`. Not connected yet – see one-time actions. Site address after connecting: `https://bloggy.<account-subdomain>.workers.dev` (later a trythis.one subdomain, Q8).
+Cloudflare Git integration (Workers Builds): every push to `main` deploys the Worker with the default command `npx wrangler deploy`. Connected 2026-11-20. Live site: https://bloggy.l8p1.workers.dev (later a trythis.one subdomain, Q8).
 
 ## Decisions
 
@@ -54,22 +54,24 @@ Cloudflare Git integration (Workers Builds): every push to `main` deploys the Wo
 ## One-time actions
 
 1. **Default branch to main** (GitHub → Settings → Default branch) – pending. The work branch became default because it was pushed first to the empty repo.
-2. **D-001 Connect the repo to Cloudflare** – pending. Cloudflare dashboard → Workers & Pages → Create application → Import a repository (GitHub) → `BadBagel47/bloggy` → project name `bloggy` (must match `name` in `wrangler.jsonc`), branch `main`, no build command, default deploy command → Save and Deploy.
+2. **D-001 Connect the repo to Cloudflare** – done 2026-11-20. Cloudflare dashboard → Workers & Pages → Create application → Import a repository (GitHub) → `BadBagel47/bloggy` → project name `bloggy` (must match `name` in `wrangler.jsonc`), branch `main`, no build command, default deploy command → Save and Deploy.
    - If the first build fails on creating the database: create a D1 database named `bloggy-db` in the dashboard (Storage & Databases → D1) and give its database ID (not secret) to the agent, who adds it to `wrangler.jsonc`.
 3. **F-002 Admin login with Cloudflare Access** – pending, after step 2.
-   - Zero Trust (free plan) → Access → Applications → Add an application → Self-hosted. Domain: the Worker's workers.dev hostname, path `admin`. Policy: Allow, include Emails = the owner's email. Save.
+   - Zero Trust (free plan) → Access → Applications → Add an application → Self-hosted. Domain: `bloggy.l8p1.workers.dev`, path `admin`. Policy: Allow, include Emails = the owner's email. Save.
    - Copy the application's "Application Audience (AUD) Tag", and the team domain (`https://<team>.cloudflareaccess.com`, Zero Trust → Settings).
-   - Workers & Pages → bloggy → Settings → Variables and Secrets: add text variables `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` → Deploy.
+   - Either the owner adds text variables `ACCESS_TEAM_DOMAIN` and `ACCESS_AUD` under Workers & Pages → bloggy → Settings → Variables and Secrets, or gives the two values (not secret) to the agent, who adds them to `vars` in `wrangler.jsonc`.
    - Check: `/admin` asks for a Cloudflare login and then shows "Inlägg". If deeper admin pages say "Adminsidan är låst", add a second path `admin/*` to the Access application.
 
 ## Environment notes
 
 - 2026-11-18: Cloud session; can push to `claude/` branches and to `main`. Running third-party installers via npx was blocked by the session's safety check (npm install of the project's own dependencies works).
 - 2026-11-19: No Cloudflare account access from the session: deploys go through the Git integration. developers.cloudflare.com is blocked by the session network; Cloudflare docs were read from the cloudflare-docs GitHub repo instead.
+- 2026-11-20: Sessions for this repo use the personal cloud environment "bloggy" (allows bloggy.l8p1.workers.dev and developers.cloudflare.com), so agents can check the live site.
 - 2026-11-19: Local testing works: `npx wrangler dev` (with `.dev.vars` `DEV_ADMIN_BYPASS=1`), Playwright/Chromium for browser checks.
 
 ## Latest
 
+- 2026-11-20: Site live at https://bloggy.l8p1.workers.dev (D-001 done). Next: owner sets up Cloudflare Access (F-002), then the admin opens.
 - 2026-11-19: Run groups A–D built and tested locally (D-001 config, F-001–F-011, F-021–F-023). Waiting for the owner's one-time Cloudflare steps before publishing. Remaining: groups E (RSS, search, reading time, statistics) and F (images, waiting for Q10/Q11).
 - 2026-11-19: Design proposal D-002 approved by the owner ("Ser bra ut"). Next: run proposal, waiting for go-ahead.
 - 2026-11-18: Design proposal D-002 published as a private page: https://claude.ai/artifact/EFsWzcVxS7LAxs4oko3b1h – waiting for feedback.
