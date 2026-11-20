@@ -53,7 +53,7 @@ Cloudflare Git integration (Workers Builds): every push to `main` deploys the Wo
 
 ## One-time actions
 
-1. **Default branch to main** (GitHub → Settings → Default branch) – pending. The work branch became default because it was pushed first to the empty repo.
+1. **Default branch to main** – done 2026-11-20.
 2. **D-001 Connect the repo to Cloudflare** – done 2026-11-20. Cloudflare dashboard → Workers & Pages → Create application → Import a repository (GitHub) → `BadBagel47/bloggy` → project name `bloggy` (must match `name` in `wrangler.jsonc`), branch `main`, no build command, default deploy command → Save and Deploy.
    - If the first build fails on creating the database: create a D1 database named `bloggy-db` in the dashboard (Storage & Databases → D1) and give its database ID (not secret) to the agent, who adds it to `wrangler.jsonc`.
 3. **F-002 Admin login with Cloudflare Access** – pending, after step 2.
